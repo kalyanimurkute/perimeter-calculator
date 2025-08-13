@@ -15,5 +15,20 @@
         <button onclick="calculatePerimeter()">Calculate Perimeter</button>
         <p id="result"></p>
     </div>
+     <script>
+        function calculatePerimeter() {
+            let length = parseFloat(document.getElementById('length').value);
+            let breadth = parseFloat(document.getElementById('breadth').value);
+
+            if (isNaN(length) || isNaN(breadth) || length <= 0 || breadth <= 0) {
+                document.getElementById('result').innerText = "Please enter valid positive numbers.";
+                return;
+            }
+
+            let perimeter = 2 * (length + breadth);
+            document.getElementById('result').innerText = "Perimeter:" + perimeter ;
+        }
+    </script>
+
 </body>
 </html>
