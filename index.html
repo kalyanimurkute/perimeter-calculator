@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>perimeter file</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="box">
+        <h2>Rectangle Perimeter Calculator</h2>
+        <input type="number" id="length" placeholder="Enter length">
+        <input type="number" id="breadth" placeholder="Enter breadth">
+        <br>
+        <button onclick="calculatePerimeter()">Calculate Perimeter</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function calculatePerimeter() {
+            let length = parseFloat(document.getElementById('length').value);
+            let breadth = parseFloat(document.getElementById('breadth').value);
+
+            if (isNaN(length) || isNaN(breadth) || length <= 0 || breadth <= 0) {
+                document.getElementById('result').innerText = "Please enter valid positive numbers.";
+                return;
+            }
+
+            let perimeter = 2 * (length + breadth);
+            document.getElementById('result').innerText = "Perimeter:" + perimeter;
+        }
+    </script>
+
+</body>
+
+</html>
